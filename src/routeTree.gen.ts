@@ -9,68 +9,154 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as appRouteRouteImport } from './routes/(app)/route'
+import { Route as appIndexRouteImport } from './routes/(app)/index'
+import { Route as appVacationRentalsRouteImport } from './routes/(app)/vacation-rentals'
+import { Route as appTravelRouteImport } from './routes/(app)/travel'
+import { Route as appHotelsRouteImport } from './routes/(app)/hotels'
+import { Route as appFlightsRouteImport } from './routes/(app)/flights'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const appRouteRoute = appRouteRouteImport.update({
+  id: '/(app)',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const appIndexRoute = appIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appVacationRentalsRoute = appVacationRentalsRouteImport.update({
+  id: '/vacation-rentals',
+  path: '/vacation-rentals',
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appTravelRoute = appTravelRouteImport.update({
+  id: '/travel',
+  path: '/travel',
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appHotelsRoute = appHotelsRouteImport.update({
+  id: '/hotels',
+  path: '/hotels',
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appFlightsRoute = appFlightsRouteImport.update({
+  id: '/flights',
+  path: '/flights',
+  getParentRoute: () => appRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/': typeof appIndexRoute
+  '/flights': typeof appFlightsRoute
+  '/hotels': typeof appHotelsRoute
+  '/travel': typeof appTravelRoute
+  '/vacation-rentals': typeof appVacationRentalsRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/flights': typeof appFlightsRoute
+  '/hotels': typeof appHotelsRoute
+  '/travel': typeof appTravelRoute
+  '/vacation-rentals': typeof appVacationRentalsRoute
+  '/': typeof appIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/(app)': typeof appRouteRouteWithChildren
+  '/(app)/flights': typeof appFlightsRoute
+  '/(app)/hotels': typeof appHotelsRoute
+  '/(app)/travel': typeof appTravelRoute
+  '/(app)/vacation-rentals': typeof appVacationRentalsRoute
+  '/(app)/': typeof appIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/flights' | '/hotels' | '/travel' | '/vacation-rentals'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/flights' | '/hotels' | '/travel' | '/vacation-rentals' | '/'
+  id:
+    | '__root__'
+    | '/(app)'
+    | '/(app)/flights'
+    | '/(app)/hotels'
+    | '/(app)/travel'
+    | '/(app)/vacation-rentals'
+    | '/(app)/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  appRouteRoute: typeof appRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
+    '/(app)': {
+      id: '/(app)'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof appRouteRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(app)/': {
+      id: '/(app)/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof appIndexRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/vacation-rentals': {
+      id: '/(app)/vacation-rentals'
+      path: '/vacation-rentals'
+      fullPath: '/vacation-rentals'
+      preLoaderRoute: typeof appVacationRentalsRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/travel': {
+      id: '/(app)/travel'
+      path: '/travel'
+      fullPath: '/travel'
+      preLoaderRoute: typeof appTravelRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/hotels': {
+      id: '/(app)/hotels'
+      path: '/hotels'
+      fullPath: '/hotels'
+      preLoaderRoute: typeof appHotelsRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/flights': {
+      id: '/(app)/flights'
+      path: '/flights'
+      fullPath: '/flights'
+      preLoaderRoute: typeof appFlightsRouteImport
+      parentRoute: typeof appRouteRoute
     }
   }
 }
 
+interface appRouteRouteChildren {
+  appFlightsRoute: typeof appFlightsRoute
+  appHotelsRoute: typeof appHotelsRoute
+  appTravelRoute: typeof appTravelRoute
+  appVacationRentalsRoute: typeof appVacationRentalsRoute
+  appIndexRoute: typeof appIndexRoute
+}
+
+const appRouteRouteChildren: appRouteRouteChildren = {
+  appFlightsRoute: appFlightsRoute,
+  appHotelsRoute: appHotelsRoute,
+  appTravelRoute: appTravelRoute,
+  appVacationRentalsRoute: appVacationRentalsRoute,
+  appIndexRoute: appIndexRoute,
+}
+
+const appRouteRouteWithChildren = appRouteRoute._addFileChildren(
+  appRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  appRouteRoute: appRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
