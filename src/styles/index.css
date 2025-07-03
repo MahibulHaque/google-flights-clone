@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+/** **************************************
+* Fonts: app
+*************************************** */
+@import '@fontsource-variable/dm-sans';
+
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow/700.css';
+@import '@fontsource/barlow/800.css';
+
+@theme {
+  --font-sans:
+    'DM Sans Variable', system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'Barlow', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-primary: 'DM Sans Variable', sans-serif;
+  --font-family-secondary: 'Barlow', sans-serif;
+
+  /* Override default namespace*/
+  --color-*: initial;
+  /* Primary Color Palette */
+  --color-primary-lighter: #d0ecfe;
+  --color-primary-light: #73bafb;
+  --color-primary: #1877f2;
+  --color-primary-dark: #0c44ae;
+  --color-primary-darker: #042174;
+
+  /* Secondary Color Palette */
+  --color-secondary-lighter: #efd6ff;
+  --color-secondary-light: #c684ff;
+  --color-secondary: #8e33ff;
+  --color-secondary-dark: #5119b7;
+  --color-secondary-darker: #27097a;
+
+  /* Info Color Palette */
+  --color-info-lighter: #cafdf5;
+  --color-info-light: #61f3f3;
+  --color-info: #00b8d9;
+  --color-info-dark: #006c9c;
+  --color-info-darker: #003768;
+
+  /* Success Color Palette */
+  --color-success-lighter: #d3fcd2;
+  --color-success-light: #77ed8b;
+  --color-success: #22c55e;
+  --color-success-dark: #118d57;
+  --color-success-darker: #065e49;
+
+  /* Warning Color Palette */
+  --color-warning-lighter: #fff5cc;
+  --color-warning-light: #ffd666;
+  --color-warning: #ffab00;
+  --color-warning-dark: #b76e00;
+  --color-warning-darker: #7a4100;
+
+  /* Error Color Palette */
+  --color-error-lighter: #ffe9d5;
+  --color-error-light: #ffac82;
+  --color-error: #ff5630;
+  --color-error-dark: #b71d18;
+  --color-error-darker: #7a0916;
+
+  /* Grey Color Palette */
+  --color-grey-50: #fcfdfd;
+  --color-grey-100: #f9fafb;
+  --color-grey-200: #f4f6f8;
+  --color-grey-300: #dfe3e8;
+  --color-grey-400: #c4cdd5;
+  --color-grey-500: #919eab;
+  --color-grey-600: #637381;
+  --color-grey-700: #454f5b;
+  --color-grey-800: #1c252e;
+  --color-grey-900: #141a21;
+
+  /* Base Colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 2000px;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply overscroll-none;
+    /* font-feature-settings: "rlig" 1, "calt" 1; */
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    [data-wrapper] {
+      @apply min-[1800px]:border-t;
+    }
+  }
+
+  /* Custom scrollbar styling. Thanks @pranathiperii. */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 5px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+}
+@utility container-wrapper {
+  @apply 3xl:fixed:max-w-[calc(var(--breakpoint-2xl)+2rem)] mx-auto w-full px-2;
+}
+
+@utility container {
+  @apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-4 lg:px-8;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
