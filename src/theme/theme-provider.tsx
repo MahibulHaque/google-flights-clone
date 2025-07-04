@@ -24,7 +24,7 @@ export function ThemeProvider({
   });
 
   return (
-    <ThemeVarsProvider disableTransitionOnChange theme={theme} {...other}>
+    <ThemeVarsProvider disableTransitionOnChange theme={theme} {...other} defaultMode={'dark'}>
       <CssBaseline />
       {children}
     </ThemeVarsProvider>

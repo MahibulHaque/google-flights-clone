@@ -19,17 +19,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     /* Base paths */
-    "baseUrl": "src/",
+    "baseUrl": ".",
     "paths": {
-      "@app/*": ["app/*"],
-      "@core/*": ["core/*"],
-      "@components/*": ["components/*"],
-      "@features/*": ["features/*"],
-      "@assets/*": ["assets/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"]

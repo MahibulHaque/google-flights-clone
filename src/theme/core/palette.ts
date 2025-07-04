@@ -77,28 +77,48 @@ export type GreyExtend = {
 // ----------------------------------------------------------------------
 
 // Primary color
-export const primary = createPaletteChannel(themeConfig.palette.primary);
+export const primary = createPaletteChannel(themeConfig.lightPalette.primary);
 
 // Secondary color
-export const secondary = createPaletteChannel(themeConfig.palette.secondary);
+export const secondary = createPaletteChannel(
+  themeConfig.lightPalette.secondary,
+);
 
 // Info color
-export const info = createPaletteChannel(themeConfig.palette.info);
+export const info = createPaletteChannel(themeConfig.lightPalette.info);
 
 // Success color
-export const success = createPaletteChannel(themeConfig.palette.success);
+export const success = createPaletteChannel(themeConfig.lightPalette.success);
 
 // Warning color
-export const warning = createPaletteChannel(themeConfig.palette.warning);
+export const warning = createPaletteChannel(themeConfig.lightPalette.warning);
 
 // Error color
-export const error = createPaletteChannel(themeConfig.palette.error);
+export const error = createPaletteChannel(themeConfig.lightPalette.error);
 
 // Common color
-export const common = createPaletteChannel(themeConfig.palette.common);
+export const common = createPaletteChannel(themeConfig.lightPalette.common);
 
 // Grey color
-export const grey = createPaletteChannel(themeConfig.palette.grey);
+export const grey = createPaletteChannel(themeConfig.lightPalette.grey);
+
+// Dark mode palette channels
+export const primaryDark = createPaletteChannel(
+  themeConfig.darkPalette.primary,
+);
+export const secondaryDark = createPaletteChannel(
+  themeConfig.darkPalette.secondary,
+);
+export const infoDark = createPaletteChannel(themeConfig.darkPalette.info);
+export const successDark = createPaletteChannel(
+  themeConfig.darkPalette.success,
+);
+export const warningDark = createPaletteChannel(
+  themeConfig.darkPalette.warning,
+);
+export const errorDark = createPaletteChannel(themeConfig.darkPalette.error);
+export const commonDark = createPaletteChannel(themeConfig.darkPalette.common);
+export const greyDark = createPaletteChannel(themeConfig.darkPalette.grey);
 
 // Text color
 export const text = {
@@ -106,6 +126,11 @@ export const text = {
     primary: grey[800],
     secondary: grey[600],
     disabled: grey[500],
+  }),
+  dark: createPaletteChannel({
+    primary: greyDark[900],
+    secondary: greyDark[800],
+    disabled: greyDark[700],
   }),
 };
 
@@ -115,6 +140,11 @@ export const background = {
     paper: '#FFFFFF',
     default: grey[100],
     neutral: grey[200],
+  }),
+  dark: createPaletteChannel({
+    paper: greyDark['50'],
+    default: greyDark['100'],
+    neutral: greyDark['200'],
   }),
 };
 
@@ -129,9 +159,20 @@ export const baseAction = {
   disabledOpacity: 0.48,
 };
 
+export const baseActionDark = {
+  hover: varAlpha(greyDark['500Channel'], 0.08),
+  selected: varAlpha(greyDark['500Channel'], 0.16),
+  focus: varAlpha(greyDark['500Channel'], 0.24),
+  disabled: varAlpha(greyDark['500Channel'], 0.8),
+  disabledBackground: varAlpha(greyDark['500Channel'], 0.24),
+  hoverOpacity: 0.08,
+  disabledOpacity: 0.48,
+};
+
 // Action color
 export const action = {
   light: {...baseAction, active: grey[600]},
+  dark: {...baseActionDark, active: greyDark['400']},
 };
 
 // ----------------------------------------------------------------------
@@ -149,6 +190,18 @@ export const basePalette = {
   divider: varAlpha(grey['500Channel'], 0.2),
 };
 
+export const basePaletteDark = {
+  primary: primaryDark,
+  secondary: secondaryDark,
+  info: infoDark,
+  success: successDark,
+  warning: warningDark,
+  error: errorDark,
+  common: commonDark,
+  grey: greyDark,
+  divider: varAlpha(greyDark['700Channel'], 0.24),
+};
+
 export const palette: Partial<
   Record<ThemeColorScheme, ColorSystemOptions['palette']>
 > = {
@@ -157,5 +210,11 @@ export const palette: Partial<
     text: text.light,
     background: background.light,
     action: action.light,
+  },
+  dark: {
+    ...basePaletteDark,
+    text: text.dark,
+    background: background.dark,
+    action: action.dark,
   },
 };
