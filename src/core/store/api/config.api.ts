@@ -1,6 +1,7 @@
-import {CONFIG} from '@core/config';
-import type {IConfigApiQueryResponse} from '@core/interfaces/configApi.interface';
-import {ApiBaseQuery} from '@core/utils/baseQuery';
+
+import { CONFIG } from '@/core/config';
+import type { IConfigApiQueryResponse } from '@/core/interfaces/configApi.interface';
+import { ApiBaseQuery } from '@/core/utils/baseQuery';
 import {createApi} from '@reduxjs/toolkit/query/react';
 
 export const configApiPath =

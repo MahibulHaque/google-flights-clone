@@ -1,9 +1,13 @@
-import {Popover, PopoverTrigger} from '@/components/ui/popover';
+import {Calendar} from '@/components/ui/calendar';
 import {cn} from '@/lib/utils/cn';
+import {Button, Popover, type SxProps} from '@mui/material';
+import type {Theme} from '@mui/material/styles';
 import {format} from 'date-fns';
 import {CalendarIcon} from 'lucide-react';
-import {type DateRange} from 'react-day-picker';
-interface DateRangePickerProps {
+import {useRef, useState} from 'react';
+import type {DateRange} from 'react-day-picker';
+
+export interface DateRangePickerProps {
   value?: DateRange;
   onChange?: (date: DateRange | undefined) => void;
   placeholder?: string;
@@ -12,6 +16,8 @@ interface DateRangePickerProps {
   numberOfMonths?: number;
   minDate?: Date;
   maxDate?: Date;
+  responsive?: boolean;
+  sx?: SxProps<Theme>;
 }
 
 export default function DateRangePicker({
@@ -20,52 +26,78 @@ export default function DateRangePicker({
   placeholder = 'Pick a date range',
   disabled = false,
   className,
-  numberOfMonths = 2,
+  numberOfMonths = 2, // Changed default to 1
   minDate,
   maxDate,
-}: DateRangePickerProps) {
+  responsive = true,
+  sx,
+}: Readonly<DateRangePickerProps>) {
+  const anchorEl = useRef<HTMLButtonElement | null>(null);
+  const [open, setOpen] = useState<boolean>(false);
+
+  // Determine number of months based on screen size if responsive
+  const getNumberOfMonths = () => {
+    if (!responsive) return numberOfMonths;
+
+    // Use 1 month on mobile, 2 on larger screens
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768 ? 1 : numberOfMonths;
+    }
+    return numberOfMonths;
+  };
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={cn('grid gap-2', className)}>
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            id="date"
-            variant={'outline'}
-            disabled={disabled}
-            className={cn(
-              'w-[300px] justify-start text-left font-normal',
-              !value && 'text-muted-foreground',
-            )}>
-            <CalendarIcon className="mr-2 h-4 w-4" />
-            {value?.from ? (
-              value.to ? (
-                <>
-                  {format(value.from, 'LLL dd, y')} -{' '}
-                  {format(value.to, 'LLL dd, y')}
-                </>
-              ) : (
-                format(value.from, 'LLL dd, y')
-              )
-            ) : (
-              <span>{placeholder}</span>
-            )}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
-          <Calendar
-            initialFocus
-            mode="range"
-            defaultMonth={value?.from}
-            selected={value}
-            onSelect={onChange}
-            numberOfMonths={numberOfMonths}
-            disabled={date => {
-              if (minDate && date < minDate) return true;
-              if (maxDate && date > maxDate) return true;
-              return false;
-            }}
-          />
-        </PopoverContent>
+      <Button
+        ref={anchorEl}
+        id="date"
+        size="large"
+        color="inherit"
+        variant="outlined"
+        onClick={handleClick}
+        disabled={disabled}
+        endIcon={<CalendarIcon />}
+        className={cn('w-full flex! items-center justify-between!')}>
+        {value?.from && value?.to && (
+          <>
+            {format(value.from, 'MMM dd, y')} - {format(value.to, 'MMM dd, y')}
+          </>
+        )}
+        {value?.from && !value.to && format(value.from, 'MMM dd, y')}
+
+        {!value?.from && !value?.to && <span>{placeholder}</span>}
+      </Button>
+      <Popover
+        open={open}
+        anchorEl={anchorEl.current}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}>
+        <Calendar
+          autoFocus
+          mode="range"
+          defaultMonth={value?.from}
+          selected={value}
+          onSelect={onChange}
+          numberOfMonths={getNumberOfMonths()}
+          disabled={date => {
+            if (minDate && date < minDate) return true;
+            if (maxDate && date > maxDate) return true;
+            return false;
+          }}
+          className="rounded-md"
+          data-slot="popover-content"
+        />
       </Popover>
     </div>
   );

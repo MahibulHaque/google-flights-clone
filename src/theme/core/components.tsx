@@ -54,7 +54,7 @@ const MuiCardHeader: Components<Theme>['MuiCardHeader'] = {
   },
   styleOverrides: {
     root: ({theme}) => ({
-      padding: theme.spacing(3, 3, 0),
+      padding: theme.spacing(2, 2, 0),
     }),
   },
 };

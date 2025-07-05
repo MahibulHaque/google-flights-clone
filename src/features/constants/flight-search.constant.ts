@@ -1,6 +1,7 @@
-import type {ISelectOption} from '@components/ui/select';
-import {EnumFlightCabinClass} from '@core/enums/flights.enum';
-import {EnumFlightTripType} from '@features/enums/flight-search.enum';
+import type { ISelectOption } from "@/components/ui/select";
+import  { EnumFlightCabinClass } from "@/core/enums/flights.enum";
+import  { EnumFlightTripType } from "../enums/flight-search.enum";
+
 
 export const FLIGHT_TRIP_TYPES: ISelectOption[] = [
   {

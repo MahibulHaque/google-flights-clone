@@ -1,7 +1,10 @@
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import Select, {type BaseSelectProps} from '@mui/material/Select';
+import Select, {
+  type BaseSelectProps,
+  type SelectChangeEvent,
+} from '@mui/material/Select';
 
 export interface ISelectOption {
   title: string;
@@ -11,6 +14,7 @@ export interface ISelectOption {
 export type ISelectProps = BaseSelectProps & {
   name: string;
   options: ISelectOption[];
+  onChange?: (event: SelectChangeEvent, child: React.ReactNode) => void;
 };
 
 const CustomSelect = ({

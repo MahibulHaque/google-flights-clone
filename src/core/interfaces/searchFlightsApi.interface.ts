@@ -1,7 +1,5 @@
-import type {
-  EnumFlightCabinClass,
-  EnumFlightsSortBy,
-} from '@core/enums/flights.enum';
+import { EnumFlightCabinClass, EnumFlightsSortBy } from "../enums/flights.enum";
+
 
 export interface ISearchFlightQueryArgs {
   originSkyId: string;

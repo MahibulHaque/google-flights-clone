@@ -1,19 +1,19 @@
-import {CONFIG} from '@core/config';
+import {CONFIG} from '@/core/config';
 import type {
   IFlightDetailQueryResponse,
   IFlightLeg,
-} from '@core/interfaces/flightDetailApi.interface';
+} from '@/core/interfaces/flightDetailApi.interface';
 import type {
   INearbyAirportQueryResponse,
   ISearchAirportQueryResponse,
-} from '@core/interfaces/flightsApi.interface';
-import type {IPriceCalendarQueryResponse} from '@core/interfaces/flightsPriceCalendarApi.interface';
+} from '@/core/interfaces/flightsApi.interface';
+import type {IPriceCalendarQueryResponse} from '@/core/interfaces/flightsPriceCalendarApi.interface';
 import type {
   ISearchFlightQueryArgs,
   ISearchFlightsQueryResponse,
-} from '@core/interfaces/searchFlightsApi.interface';
-import {ApiBaseQuery} from '@core/utils/baseQuery';
-import {constructQueryParams} from '@core/utils/queryParams';
+} from '@/core/interfaces/searchFlightsApi.interface';
+import {ApiBaseQuery} from '@/core/utils/baseQuery';
+import {constructQueryParams} from '@/core/utils/queryParams';
 import {createApi} from '@reduxjs/toolkit/query/react';
 
 export const flightsApiPaths = {
@@ -21,8 +21,7 @@ export const flightsApiPaths = {
     CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/getNearByAirports',
   searchAirports:
     CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/searchAirport',
-  searchFlights:
-    CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/searchFlights',
+  searchFlights: CONFIG.apiBaseUrl + '/api/v2/' + 'flights/searchFlights',
   flightDetails:
     CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/getFlightDetails',
   priceCalendar:
@@ -71,7 +70,7 @@ export const flightsApi = createApi({
             flightsApiPaths.searchAirports +
             constructQueryParams({
               locale: CONFIG.locale,
-              q: arg.q,
+              query: arg.q,
             }),
           method: 'GET',
         };

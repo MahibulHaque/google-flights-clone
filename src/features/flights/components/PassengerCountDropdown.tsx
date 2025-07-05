@@ -7,28 +7,44 @@ import Popover from '@mui/material/Popover';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import {useState} from 'react';
+import type {
+  IPassengers,
+  TypePassenger,
+  TypePassengerCountOperation,
+} from '../interfaces/passengers.interface';
 import PassengerRow from './PassengerRow';
 
-export default function PassengerCountDropdown() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [passengers, setPassengers] = useState({
-    adults: 1,
-    children: 0,
-    infants: 0,
-  });
+interface IPassengerCountDropdownProps {
+  value: IPassengers;
+  onChange: (val: IPassengers) => void;
+  error?: unknown;
+}
 
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
+export default function PassengerCountDropdown({
+  value,
+  onChange,
+  error,
+}: IPassengerCountDropdownProps) {
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [tempPassengers, setTempPassengers] = useState<IPassengers>(value);
 
   const handleClose = () => {
+    setAnchorEl(null);
+    setTempPassengers(value); // Reset to original value on cancel
+  };
+
+  const handleDone = () => {
+    onChange(tempPassengers);
     setAnchorEl(null);
   };
 
   const open = Boolean(anchorEl);
 
-  const updatePassengerCount = (type, operation) => {
-    setPassengers(prev => {
+  const updatePassengerCount = (
+    type: TypePassenger,
+    operation: TypePassengerCountOperation,
+  ) => {
+    setTempPassengers(prev => {
       const newCount =
         operation === 'increment'
           ? prev[type] + 1
@@ -46,7 +62,7 @@ export default function PassengerCountDropdown() {
     });
   };
 
-  const getTotalPassengers = () => {
+  const getTotalPassengers = (passengers = value) => {
     return passengers.adults + passengers.children + passengers.infants;
   };
 
@@ -58,21 +74,25 @@ export default function PassengerCountDropdown() {
   return (
     <>
       <Button
-        className="min-h-[56px]!"
+        className="min-h-[56px]"
         size="large"
         variant="outlined"
-        onClick={handleClick}
+        onClick={e => {
+          setAnchorEl(e.currentTarget);
+          setTempPassengers(value); // Reset temp state when opening
+        }}
         startIcon={<Person />}
+        error={!!error}
         sx={{
           justifyContent: 'flex-start',
           textTransform: 'none',
           px: 2,
           py: 1.5,
           minWidth: 200,
-          color: 'text.primary',
-          borderColor: 'divider',
+          color: error ? 'error.main' : 'text.primary',
+          borderColor: error ? 'error.main' : 'divider',
           '&:hover': {
-            borderColor: 'primary.main',
+            borderColor: error ? 'error.main' : 'primary.main',
           },
         }}>
         <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
@@ -124,7 +144,7 @@ export default function PassengerCountDropdown() {
           <Stack divider={<Divider />}>
             <PassengerRow
               title="Adults"
-              count={passengers.adults}
+              count={tempPassengers.adults}
               type="adults"
               updatePassengerCount={updatePassengerCount}
               minValue={1}
@@ -133,7 +153,7 @@ export default function PassengerCountDropdown() {
             <PassengerRow
               title="Children"
               subtitle="Aged 2-11"
-              count={passengers.children}
+              count={tempPassengers.children}
               updatePassengerCount={updatePassengerCount}
               type="children"
             />
@@ -142,7 +162,7 @@ export default function PassengerCountDropdown() {
               title="Infants"
               subtitle="In seat"
               updatePassengerCount={updatePassengerCount}
-              count={passengers.infants}
+              count={tempPassengers.infants}
               type="infants"
             />
           </Stack>
@@ -165,7 +185,7 @@ export default function PassengerCountDropdown() {
             </Button>
             <Button
               variant="contained"
-              onClick={handleClose}
+              onClick={handleDone}
               sx={{textTransform: 'none'}}>
               Done
             </Button>

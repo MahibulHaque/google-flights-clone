@@ -1,4 +1,3 @@
-import {CONFIG} from '@core/config';
 import {
   type BaseQueryFn,
   type FetchArgs,
@@ -6,6 +5,7 @@ import {
   type FetchBaseQueryError,
   type FetchBaseQueryMeta,
 } from '@reduxjs/toolkit/query';
+import { CONFIG } from '../config';
 
 interface IExtraOptions {
   headers?: Record<string, string>;

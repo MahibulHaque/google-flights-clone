@@ -1,0 +1,1175 @@
+{
+  "status": true,
+  "timestamp": 1751716135937,
+  "data": {
+    "context": {
+      "status": "incomplete",
+      "sessionId": "KLUv_WAyACUHAJbQMySwpw0MIw4TDTAHbPCTKXLNgANK35Jb0uZaH5NWGkEobncbYQEpACoAKQDRWZ1sT6Mnf9jYM1iajy1NKGFy5cpeOf1e1k3slalNqRl8UAIpHIVZoO5tQijjvvN7q7n9u2SV3rJFQA86OAuzkCLYiSTygDTM7veltRMmXc1QV0yyshm_3bJyAgxrbrDffSW7xu6o6z0rZE_qfKuU5H2QAS0HwLTSQBcDCcRS6Jniereqp5w6tawTuqTrVbNqjtFoOAzO0vhs0L_B-NbrWu1YUwYAuiG4LkMDWwXWK1dcL_Cm0A==",
+      "totalResults": 10
+    },
+    "itineraries": [
+      {
+        "id": "13554-2508081320--32480-0-12712-2508081610",
+        "price": {
+          "raw": 549,
+          "formatted": "$549",
+          "pricingOptionId": "ncVnAz5mswkc"
+        },
+        "legs": [
+          {
+            "id": "13554-2508081320--32480-0-12712-2508081610",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 470,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T13:20:00",
+            "arrival": "2025-08-08T16:10:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32480,
+                  "alternateId": "BA",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+                  "name": "British Airways"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12712-2508081320-2508081610--32480",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T13:20:00",
+                "arrival": "2025-08-08T16:10:00",
+                "durationInMinutes": 470,
+                "flightNumber": "177",
+                "marketingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "operatingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "eco": {
+          "ecoContenderDelta": 10.190553
+        },
+        "fareAttributes": {},
+        "tags": ["second_cheapest", "second_shortest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.999
+      },
+      {
+        "id": "13554-2508080740--32753-1-12712-2508081325",
+        "price": {
+          "raw": 554,
+          "formatted": "$554",
+          "pricingOptionId": "LKJkVwZ9QOSh"
+        },
+        "legs": [
+          {
+            "id": "13554-2508080740--32753-1-12712-2508081325",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 645,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T07:40:00",
+            "arrival": "2025-08-08T13:25:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32753,
+                  "alternateId": "EI",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+                  "name": "Aer Lingus"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11154-2508080740-2508080900--32753",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport",
+                  "country": "Ireland"
+                },
+                "departure": "2025-08-08T07:40:00",
+                "arrival": "2025-08-08T09:00:00",
+                "durationInMinutes": 80,
+                "flightNumber": "151",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0,
+                  "displayCode": "EI"
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0,
+                  "displayCode": "EI"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              },
+              {
+                "id": "11154-12712-2508081105-2508081325--32753",
+                "origin": {
+                  "flightPlaceId": "DUB",
+                  "displayCode": "DUB",
+                  "parent": {
+                    "flightPlaceId": "DUBL",
+                    "displayCode": "DUB",
+                    "name": "Dublin",
+                    "type": "City"
+                  },
+                  "name": "Dublin",
+                  "type": "Airport",
+                  "country": "Ireland"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T11:05:00",
+                "arrival": "2025-08-08T13:25:00",
+                "durationInMinutes": 440,
+                "flightNumber": "105",
+                "marketingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0,
+                  "displayCode": "EI"
+                },
+                "operatingCarrier": {
+                  "id": -32753,
+                  "name": "Aer Lingus",
+                  "alternateId": "EI",
+                  "allianceId": 0,
+                  "displayCode": "EI"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["third_cheapest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.597217
+      },
+      {
+        "id": "13554-2508081135--32317-0-12712-2508081425",
+        "price": {
+          "raw": 941,
+          "formatted": "$941",
+          "pricingOptionId": "sDvL7jhklm69"
+        },
+        "legs": [
+          {
+            "id": "13554-2508081135--32317-0-12712-2508081425",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 470,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T11:35:00",
+            "arrival": "2025-08-08T14:25:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32317,
+                  "alternateId": "AY",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AY.png",
+                  "name": "Finnair"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32480,
+                  "alternateId": "BA",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+                  "name": "British Airways"
+                }
+              ],
+              "operationType": "not_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12712-2508081135-2508081425--32317",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T11:35:00",
+                "arrival": "2025-08-08T14:25:00",
+                "durationInMinutes": 470,
+                "flightNumber": "5473",
+                "marketingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "operatingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["third_shortest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.54817
+      },
+      {
+        "id": "13554-2508082045--32480,-30667-1-12712-2508092200",
+        "price": {
+          "raw": 423,
+          "formatted": "$423",
+          "pricingOptionId": "Ch-gloYGNM6F"
+        },
+        "legs": [
+          {
+            "id": "13554-2508082045--32480,-30667-1-12712-2508092200",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1815,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T20:45:00",
+            "arrival": "2025-08-09T22:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32480,
+                  "alternateId": "BA",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+                  "name": "British Airways"
+                },
+                {
+                  "id": -30667,
+                  "alternateId": "9~",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/9%7E.png",
+                  "name": "Norse Atlantic Airways"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-15093-2508082045-2508082355--32480",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "OSL",
+                  "displayCode": "OSL",
+                  "parent": {
+                    "flightPlaceId": "OSLO",
+                    "displayCode": "OSL",
+                    "name": "Oslo",
+                    "type": "City"
+                  },
+                  "name": "Oslo Gardermoen",
+                  "type": "Airport",
+                  "country": "Norway"
+                },
+                "departure": "2025-08-08T20:45:00",
+                "arrival": "2025-08-08T23:55:00",
+                "durationInMinutes": 130,
+                "flightNumber": "766",
+                "marketingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "operatingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              },
+              {
+                "id": "15093-12712-2508092005-2508092200--30667",
+                "origin": {
+                  "flightPlaceId": "OSL",
+                  "displayCode": "OSL",
+                  "parent": {
+                    "flightPlaceId": "OSLO",
+                    "displayCode": "OSL",
+                    "name": "Oslo",
+                    "type": "City"
+                  },
+                  "name": "Oslo Gardermoen",
+                  "type": "Airport",
+                  "country": "Norway"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-09T20:05:00",
+                "arrival": "2025-08-09T22:00:00",
+                "durationInMinutes": 475,
+                "flightNumber": "1",
+                "marketingCarrier": {
+                  "id": -30667,
+                  "name": "Norse Atlantic Airways",
+                  "alternateId": "9~",
+                  "allianceId": 0,
+                  "displayCode": "N0"
+                },
+                "operatingCarrier": {
+                  "id": -30667,
+                  "name": "Norse Atlantic Airways",
+                  "alternateId": "9~",
+                  "allianceId": 0,
+                  "displayCode": "N0"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": true,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["cheapest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.433185
+      },
+      {
+        "id": "13554-2508081805--32317-0-12712-2508082100",
+        "price": {
+          "raw": 941,
+          "formatted": "$941",
+          "pricingOptionId": "FttNM1h6JjGW"
+        },
+        "legs": [
+          {
+            "id": "13554-2508081805--32317-0-12712-2508082100",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 475,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T18:05:00",
+            "arrival": "2025-08-08T21:00:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32317,
+                  "alternateId": "AY",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AY.png",
+                  "name": "Finnair"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32480,
+                  "alternateId": "BA",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+                  "name": "British Airways"
+                }
+              ],
+              "operationType": "not_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12712-2508081805-2508082100--32317",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T18:05:00",
+                "arrival": "2025-08-08T21:00:00",
+                "durationInMinutes": 475,
+                "flightNumber": "5479",
+                "marketingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "operatingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.42787
+      },
+      {
+        "id": "13554-2508081940--32317-0-12712-2508082230",
+        "price": {
+          "raw": 1161,
+          "formatted": "$1,161",
+          "pricingOptionId": "Z5cHYov6TS8r"
+        },
+        "legs": [
+          {
+            "id": "13554-2508081940--32317-0-12712-2508082230",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 470,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T19:40:00",
+            "arrival": "2025-08-08T22:30:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32317,
+                  "alternateId": "AY",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AY.png",
+                  "name": "Finnair"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32480,
+                  "alternateId": "BA",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+                  "name": "British Airways"
+                }
+              ],
+              "operationType": "not_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12712-2508081940-2508082230--32317",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T19:40:00",
+                "arrival": "2025-08-08T22:30:00",
+                "durationInMinutes": 470,
+                "flightNumber": "5483",
+                "marketingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "operatingCarrier": {
+                  "id": -32480,
+                  "name": "British Airways",
+                  "alternateId": "BA",
+                  "allianceId": -32000,
+                  "displayCode": "BA"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.410599
+      },
+      {
+        "id": "13554-2508080815--32171-0-12712-2508081119",
+        "price": {
+          "raw": 1076.55,
+          "formatted": "$1,077",
+          "pricingOptionId": "FhnBcdjZem_o"
+        },
+        "legs": [
+          {
+            "id": "13554-2508080815--32171-0-12712-2508081119",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 484,
+            "stopCount": 0,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T08:15:00",
+            "arrival": "2025-08-08T11:19:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32171,
+                  "alternateId": "B6",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/B6.png",
+                  "name": "jetBlue"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12712-2508080815-2508081119--32171",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T08:15:00",
+                "arrival": "2025-08-08T11:19:00",
+                "durationInMinutes": 484,
+                "flightNumber": "2220",
+                "marketingCarrier": {
+                  "id": -32171,
+                  "name": "jetBlue",
+                  "alternateId": "B6",
+                  "allianceId": 0,
+                  "displayCode": "B6"
+                },
+                "operatingCarrier": {
+                  "id": -32171,
+                  "name": "jetBlue",
+                  "alternateId": "B6",
+                  "allianceId": 0,
+                  "displayCode": "B6"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.407266
+      },
+      {
+        "id": "13554-2508081020--32317-1-12712-2508081905",
+        "price": {
+          "raw": 572,
+          "formatted": "$572",
+          "pricingOptionId": "oh-m4fBVd5ui"
+        },
+        "legs": [
+          {
+            "id": "13554-2508081020--32317-1-12712-2508081905",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy",
+              "displayCode": "JFK",
+              "city": "New York",
+              "country": "United States",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 825,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-08-08T10:20:00",
+            "arrival": "2025-08-08T19:05:00",
+            "timeDeltaInDays": 0,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32317,
+                  "alternateId": "AY",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AY.png",
+                  "name": "Finnair"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-12126-2508081020-2508081515--32317",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "HEL",
+                  "displayCode": "HEL",
+                  "parent": {
+                    "flightPlaceId": "HELS",
+                    "displayCode": "HEL",
+                    "name": "Helsinki",
+                    "type": "City"
+                  },
+                  "name": "Helsinki Vantaa",
+                  "type": "Airport",
+                  "country": "Finland"
+                },
+                "departure": "2025-08-08T10:20:00",
+                "arrival": "2025-08-08T15:15:00",
+                "durationInMinutes": 175,
+                "flightNumber": "1332",
+                "marketingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "operatingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              },
+              {
+                "id": "12126-12712-2508081715-2508081905--32317",
+                "origin": {
+                  "flightPlaceId": "HEL",
+                  "displayCode": "HEL",
+                  "parent": {
+                    "flightPlaceId": "HELS",
+                    "displayCode": "HEL",
+                    "name": "Helsinki",
+                    "type": "City"
+                  },
+                  "name": "Helsinki Vantaa",
+                  "type": "Airport",
+                  "country": "Finland"
+                },
+                "destination": {
+                  "flightPlaceId": "JFK",
+                  "displayCode": "JFK",
+                  "parent": {
+                    "flightPlaceId": "NYCA",
+                    "displayCode": "NYC",
+                    "name": "New York",
+                    "type": "City"
+                  },
+                  "name": "New York John F. Kennedy",
+                  "type": "Airport",
+                  "country": "United States"
+                },
+                "departure": "2025-08-08T17:15:00",
+                "arrival": "2025-08-08T19:05:00",
+                "durationInMinutes": 530,
+                "flightNumber": "15",
+                "marketingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "operatingCarrier": {
+                  "id": -32317,
+                  "name": "Finnair",
+                  "alternateId": "AY",
+                  "allianceId": -32000,
+                  "displayCode": "AY"
+                },
+                "transportMode": "TRANSPORT_MODE_FLIGHT"
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.394345
+      }
+    ],
+    "messages": [],
+    "filterStats": {
+      "duration": {
+        "min": 465,
+        "max": 1815,
+        "multiCityMin": 465,
+        "multiCityMax": 1815
+      },
+      "total": 10,
+      "hasCityOpenJaw": false,
+      "multipleCarriers": {
+        "minPrice": "$423",
+        "rawMinPrice": null
+      },
+      "airports": [
+        {
+          "city": "London",
+          "airports": [
+            {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow"
+            }
+          ]
+        },
+        {
+          "city": "New York",
+          "airports": [
+            {
+              "id": "JFK",
+              "entityId": "95565058",
+              "name": "New York John F. Kennedy"
+            }
+          ]
+        }
+      ],
+      "carriers": [
+        {
+          "id": -32753,
+          "alternateId": "EI",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/EI.png",
+          "name": "Aer Lingus",
+          "minPrice": "$554",
+          "allianceId": 0
+        },
+        {
+          "id": -32480,
+          "alternateId": "BA",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+          "name": "British Airways",
+          "minPrice": "$549",
+          "allianceId": -32000
+        },
+        {
+          "id": -32317,
+          "alternateId": "AY",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AY.png",
+          "name": "Finnair",
+          "minPrice": "$572",
+          "allianceId": -32000
+        },
+        {
+          "id": -32171,
+          "alternateId": "B6",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/B6.png",
+          "name": "jetBlue",
+          "minPrice": "$1,077",
+          "allianceId": 0
+        },
+        {
+          "id": -30667,
+          "alternateId": "9~",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/9%7E.png",
+          "name": "Norse Atlantic Airways",
+          "allianceId": 0
+        }
+      ],
+      "stopPrices": {
+        "direct": {
+          "isPresent": true,
+          "formattedPrice": "$549",
+          "rawPrice": 549
+        },
+        "one": {
+          "isPresent": true,
+          "formattedPrice": "$423",
+          "rawPrice": 423
+        },
+        "twoOrMore": {
+          "isPresent": false
+        }
+      },
+      "alliances": [
+        {
+          "id": -32000,
+          "name": "OneWorld"
+        }
+      ]
+    },
+    "flightsSessionId": "a5700215-f502-427f-81f5-e1e0acad06bf",
+    "destinationImageUrl": "https://content.skyscnr.com/m/3719e8f4a5daf43d/original/Flights-Placeholder.jpg"
+  }
+}

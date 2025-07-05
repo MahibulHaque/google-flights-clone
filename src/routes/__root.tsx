@@ -1,13 +1,16 @@
+import StoreProvider from '@/components/provider/StoreProvider';
+import {ThemeProvider} from '@/theme';
 import {createRootRoute, Outlet} from '@tanstack/react-router';
 import {TanStackRouterDevtools} from '@tanstack/react-router-devtools';
-import {ThemeProvider} from 'theme';
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <ThemeProvider>
-        <Outlet />
-      </ThemeProvider>
+      <StoreProvider>
+        <ThemeProvider>
+          <Outlet />
+        </ThemeProvider>
+      </StoreProvider>
       <TanStackRouterDevtools />
     </>
   ),

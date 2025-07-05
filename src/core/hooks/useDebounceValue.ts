@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react';
-import {DebouncedState, useDebounceCallback} from './useDebounceCallback';
+import {type DebouncedState, useDebounceCallback} from './useDebounceCallback';
 
 type UseDebounceValueOptions<T> = {
   leading?: boolean;

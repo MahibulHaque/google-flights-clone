@@ -1,8 +1,8 @@
-import {IconGoogle} from '@assets/icons/IconGoogle';
-import RouterLink from '@components/router-link';
-import {navMenuItems} from '@core/constants/menuItem.constant';
+import { IconGoogle } from '@/assets/icons/IconGoogle';
+import { navMenuItems } from '@/core/constants/menuItem.constant';
 import Button from '@mui/material/Button';
 import {useLocation} from '@tanstack/react-router';
+import RouterLink from '../router-link';
 
 const Header = () => {
   const location = useLocation();
