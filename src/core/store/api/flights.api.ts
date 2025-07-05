@@ -1,5 +1,9 @@
 import {CONFIG} from '@/core/config';
 import type {
+  EnumFlightCabinClass,
+  EnumFlightsSortBy,
+} from '@/core/enums/flights.enum';
+import type {
   IFlightDetailQueryResponse,
   IFlightLeg,
 } from '@/core/interfaces/flightDetailApi.interface';
@@ -22,6 +26,8 @@ export const flightsApiPaths = {
   searchAirports:
     CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/searchAirport',
   searchFlights: CONFIG.apiBaseUrl + '/api/v2/' + 'flights/searchFlights',
+  searchFlightsMultistops:
+    CONFIG.apiBaseUrl + CONFIG.appVersion + 'flights/searchFlightsMultiStops',
   flightDetails:
     CONFIG.apiBaseUrl + CONFIG.apiVersion + 'flights/getFlightDetails',
   priceCalendar:
@@ -138,6 +144,27 @@ export const flightsApi = createApi({
         };
       },
     }),
+    searchFlightsMultistop: builder.query<
+      ISearchFlightsQueryResponse,
+      {
+        legs: string;
+        cabinClass?: EnumFlightCabinClass;
+        adults?: number;
+        childrens?: number;
+        infants?: number;
+        sortBy?: EnumFlightsSortBy;
+        currency?: string;
+        countryCode?: string;
+        market?: string;
+      }
+    >({
+      query: args => {
+        return {
+          url: flightsApiPaths.searchFlights + constructQueryParams({...args}),
+          method:'GET'
+        };
+      },
+    }),
   }),
 });
 
@@ -152,4 +179,6 @@ export const {
   useLazyFlightDetailsQuery,
   useFlightsPriceCalendarQuery,
   useLazyFlightsPriceCalendarQuery,
+  useSearchFlightsMultistopQuery,
+  useLazySearchFlightsMultistopQuery
 } = flightsApi;

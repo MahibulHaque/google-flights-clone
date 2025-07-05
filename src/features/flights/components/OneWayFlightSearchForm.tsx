@@ -1,5 +1,5 @@
 import {DatePicker} from '@/components/ui/date-picker';
-import {store} from '@/core/store';
+import {store, useAppDispatch} from '@/core/store';
 import {useLazySearchFlightsQuery} from '@/core/store/api';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {format} from 'date-fns/format';
@@ -10,6 +10,7 @@ import {
   type TypeOneWayFlightSearchFormFields,
 } from '../schema/one-way-form.schema';
 import AirportSearch from './AirportSearch';
+import { updateFlightData } from '@/core/store/slices/flight.slice';
 
 export interface IOnewayFlightSearchFormRef {
   submit: () => Promise<void>;
@@ -20,6 +21,7 @@ interface IOnewayFlightSearchFormProps {
 }
 
 export const OneWayFlightSearchForm = ({ref}: IOnewayFlightSearchFormProps) => {
+  const dispatch = useAppDispatch();
   const [searchFlightsQuery] = useLazySearchFlightsQuery();
   const {control, handleSubmit} = useForm<TypeOneWayFlightSearchFormFields>({
     resolver: zodResolver(oneWayFlightSearchFormSchema),
@@ -57,8 +59,10 @@ export const OneWayFlightSearchForm = ({ref}: IOnewayFlightSearchFormProps) => {
         infants: flightSearchOptions.passengers.infants,
       }).unwrap();
 
-      console.log(response.data);
-    } catch (error) {
+      if(response.data){
+        dispatch(updateFlightData(response.data))
+      }
+     } catch (error) {
       console.log(error);
     }
   };

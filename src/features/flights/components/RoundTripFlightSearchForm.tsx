@@ -1,6 +1,7 @@
 import DateRangePicker from '@/components/ui/date-range-picker';
-import {store} from '@/core/store';
+import {store, useAppDispatch} from '@/core/store';
 import {useLazySearchFlightsQuery} from '@/core/store/api';
+import {updateFlightData} from '@/core/store/slices/flight.slice';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {format} from 'date-fns/format';
 import {useImperativeHandle, type RefObject} from 'react';
@@ -22,6 +23,7 @@ export interface IRoundTripFlightSearchFormProps {
 export default function RoundTripFlightSearchForm({
   ref,
 }: IRoundTripFlightSearchFormProps) {
+  const dispatch = useAppDispatch();
   const [searchFlightsQuery] = useLazySearchFlightsQuery();
 
   const {control, handleSubmit} = useForm<TypeRoundTripFlightSearchFormFields>({
@@ -68,7 +70,9 @@ export default function RoundTripFlightSearchForm({
         infants: flightSearchOptions.passengers.infants,
       }).unwrap();
 
-      console.log(response.data);
+      if (response.data) {
+        dispatch(updateFlightData(response.data));
+      }
     } catch (error) {
       console.log(error);
     }

@@ -15,7 +15,7 @@ export interface IFlightSearchOption {
 
 export interface IFlightState {
   flightSearchOption: IFlightSearchOption;
-  flightData: IFlightData[];
+  flightData: IFlightData | null;
 }
 
 const initialState: IFlightState = {
@@ -28,7 +28,7 @@ const initialState: IFlightState = {
       infants: 0,
     },
   },
-  flightData: [],
+  flightData: null,
 };
 
 const appFlightSlice = createSlice({
@@ -44,7 +44,7 @@ const appFlightSlice = createSlice({
     changeCabinClass: (state, action: PayloadAction<EnumFlightCabinClass>) => {
       state.flightSearchOption.cabinClass = action.payload;
     },
-    updateFlightData: (state, action: PayloadAction<IFlightData[]>) => {
+    updateFlightData: (state, action: PayloadAction<IFlightData>) => {
       state.flightData = action.payload;
     },
   },

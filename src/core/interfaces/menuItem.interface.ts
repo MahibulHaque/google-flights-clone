@@ -1,8 +1,8 @@
-import type { Icon, IconProps } from "@tabler/icons-react";
+import type { SvgIconComponent } from "@mui/icons-material";
 import type { LinkProps } from "@tanstack/react-router";
 
 export interface INavMenuItems {
-  icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<Icon>>;
+  icon: SvgIconComponent;
   title: string;
   href: LinkProps['to'];
 }

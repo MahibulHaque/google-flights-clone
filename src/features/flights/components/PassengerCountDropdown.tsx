@@ -82,7 +82,6 @@ export default function PassengerCountDropdown({
           setTempPassengers(value); // Reset temp state when opening
         }}
         startIcon={<Person />}
-        error={!!error}
         sx={{
           justifyContent: 'flex-start',
           textTransform: 'none',

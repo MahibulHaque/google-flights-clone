@@ -1,9 +1,9 @@
 import {Calendar} from '@/components/ui/calendar';
 import {cn} from '@/lib/utils/cn';
+import { CalendarToday } from '@mui/icons-material';
 import {Button, Popover, type SxProps} from '@mui/material';
 import type {Theme} from '@mui/material/styles';
 import {format} from 'date-fns';
-import {CalendarIcon} from 'lucide-react';
 import {useRef, useState} from 'react';
 import type {DateRange} from 'react-day-picker';
 
@@ -30,7 +30,6 @@ export default function DateRangePicker({
   minDate,
   maxDate,
   responsive = true,
-  sx,
 }: Readonly<DateRangePickerProps>) {
   const anchorEl = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState<boolean>(false);
@@ -64,7 +63,7 @@ export default function DateRangePicker({
         variant="outlined"
         onClick={handleClick}
         disabled={disabled}
-        endIcon={<CalendarIcon />}
+        endIcon={<CalendarToday />}
         className={cn('w-full flex! items-center justify-between!')}>
         {value?.from && value?.to && (
           <>

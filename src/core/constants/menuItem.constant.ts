@@ -1,25 +1,20 @@
-import type { INavMenuItems } from "@core/interfaces/menuItem.interface";
-import { IconLuggage, IconPlaneTilt, IconBedFilled, IconBeach } from "@tabler/icons-react";
+import type { INavMenuItems } from "@/core/interfaces/menuItem.interface";
+import {  Flight, Hotel, TravelExplore } from "@mui/icons-material";
 
 export const navMenuItems: INavMenuItems[] = [
   {
-    icon: IconLuggage,
+    icon: TravelExplore,
     title: 'Travel',
     href: '/travel',
   },
   {
-    icon: IconPlaneTilt,
+    icon: Flight,
     title: 'Flight',
     href: '/flights',
   },
   {
-    icon: IconBedFilled,
+    icon: Hotel,
     title: 'Hotels',
     href: '/hotels',
-  },
-  {
-    icon: IconBeach,
-    title: 'Vacation Rentals',
-    href: '/vacation-rentals',
   },
 ] as const;

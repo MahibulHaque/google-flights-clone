@@ -1,5 +1,4 @@
-import { EnumFlightCabinClass, EnumFlightsSortBy } from "../enums/flights.enum";
-
+import {EnumFlightCabinClass, EnumFlightsSortBy} from '../enums/flights.enum';
 
 export interface ISearchFlightQueryArgs {
   originSkyId: string;
@@ -34,6 +33,8 @@ export interface IFlightData {
 
 export interface Context {
   status: string;
+
+  sessionId: string;
   totalResults: number;
 }
 
@@ -166,6 +167,8 @@ export interface IFlightEconomy {
 
 export interface IFlightFilterStats {
   duration: Duration;
+  total: number;
+  hasCityOpenJaw: boolean;
   airports: Airport[];
   carriers: Carrier[];
   stopPrices: StopPrices;

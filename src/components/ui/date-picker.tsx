@@ -1,8 +1,8 @@
 import {Calendar} from '@/components/ui/calendar';
+import { CalendarToday } from '@mui/icons-material';
 import {Popover} from '@mui/material';
 import Button from '@mui/material/Button';
 import {format} from 'date-fns';
-import {Calendar as CalendarIcon} from 'lucide-react';
 import {useRef, useState} from 'react';
 
 interface IDatepickerProps {
@@ -38,7 +38,7 @@ export function DatePicker({value, onChange}: IDatepickerProps) {
         variant="outlined"
         className="w-full justify-between!"
         onClick={handleOpen}
-        endIcon={<CalendarIcon />}>
+        endIcon={<CalendarToday />}>
         {value ? format(value, 'PPP') : <span>Pick a date</span>}
       </Button>
       <Popover

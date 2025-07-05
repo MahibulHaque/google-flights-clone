@@ -19,6 +19,10 @@ import Button from '@mui/material/Button';
 import {useRef} from 'react';
 import type {IPassengers} from '../interfaces/passengers.interface';
 import {
+  type IMultiWayFlightSearchFormRef,
+  MultiWayFlightSearchForm,
+} from './MultiWayFlightSearchForm';
+import {
   OneWayFlightSearchForm,
   type IOnewayFlightSearchFormRef,
 } from './OneWayFlightSearchForm';
@@ -32,6 +36,8 @@ export const FlightSearchCard = () => {
   );
   const roundTripFlightSearchFormRef =
     useRef<IRoundTripFlightSearchFormRef | null>(null);
+  const multiwayFlightSearchFormRef =
+    useRef<IMultiWayFlightSearchFormRef | null>(null);
   const dispatch = useAppDispatch();
   const tripType = useAppSelector(selectFlightTripType);
   const cabinClass = useAppSelector(selectFlightCabinClass);
@@ -55,6 +61,9 @@ export const FlightSearchCard = () => {
         await onewayFlightSearchFormRef.current?.submit();
       } else if (tripType === EnumFlightTripType.ROUND_TRIP) {
         await roundTripFlightSearchFormRef.current?.submit();
+      }
+      else if(tripType === EnumFlightTripType.MULTI_STOP){
+        await multiwayFlightSearchFormRef.current?.submit();
       }
     } catch (error) {
       console.log(error);
@@ -93,6 +102,9 @@ export const FlightSearchCard = () => {
       )}
       {tripType === EnumFlightTripType.ROUND_TRIP && (
         <RoundTripFlightSearchForm ref={roundTripFlightSearchFormRef} />
+      )}
+      {tripType === EnumFlightTripType.MULTI_STOP && (
+        <MultiWayFlightSearchForm ref={multiwayFlightSearchFormRef} />
       )}
       <Button
         size="large"

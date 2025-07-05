@@ -5,5 +5,5 @@ export const Route = createFileRoute('/(app)/')({
 });
 
 function RouteComponent() {
-  return <Navigate to="/flights"/>;
+  return <Navigate to="/flights" replace/>;
 }

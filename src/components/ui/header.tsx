@@ -7,7 +7,7 @@ import RouterLink from '../router-link';
 const Header = () => {
   const location = useLocation();
   return (
-    <div className="w-full bg-background sticky top-0 z-50 border-b border-border">
+    <div className="w-full bg-background sticky top-0 z-1000 border-b border-border">
       <div className="container-wrapper 3xl:fixed:px-0 px-6">
         <div className="3xl:fixed:container flex h-[calc(0.25rem*14)] items-center gap-2">
           <a
